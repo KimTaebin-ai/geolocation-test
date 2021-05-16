@@ -28,6 +28,26 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'kakaomap',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../kakao-map/kakao-map.module').then(m => m.KakaoMapPageModule)
+          }
+        ]
+      },
+      {
+        path: 'navermap',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../naver-map/naver-map.module').then(m => m.NaverMapPageModule)
+          }
+        ]
+      },
+      {
         path: 'tab3',
         children: [
           {

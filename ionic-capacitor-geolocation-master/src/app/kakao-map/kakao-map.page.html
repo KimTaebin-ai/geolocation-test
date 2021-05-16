@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Kakao Map
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map" class="map"></div>
+
+  <ion-grid class="status-grid">
+    <ion-row>
+      <ion-col *ngIf="showingCurrent">
+        현재 주소 보기
+      </ion-col>
+      <ion-col *ngIf="!showingCurrent">
+        내 위치로 가기
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button color="success" (click)="setCurrentPosition()" expand="full" class="ion-margin">내 위치 표시
+  </ion-button>
+
+  <ion-item>
+    <ion-label position="stacked">주소를 입력해주세요</ion-label>
+    <ion-input type="text" [(ngModel)]="address" name="address"></ion-input>
+  </ion-item>
+  <ion-row class="ion-padding-horizontal ion-padding-top" *ngIf="!showingCurrent">
+    <ion-text class="coords">위도 : {{lat}}</ion-text>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal" *ngIf="!showingCurrent">
+    <ion-text class="coords">경도 : {{lng}}</ion-text>
+  </ion-row>
+  <ion-button color="success" (click)="geocode()" expand="full" class="ion-margin">
+    주소 찾기</ion-button>
+</ion-content>
