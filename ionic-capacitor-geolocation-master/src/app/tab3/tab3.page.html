@@ -21,10 +21,18 @@
       <ion-row>
         <ion-text class="coords">경도 : {{lng}}</ion-text>
       </ion-row>
+      <ion-row>
+        <ion-text class="coords">고도 : {{alt}}</ion-text>
+      </ion-row>
     </ion-card-content>
   </ion-card>
   <ion-button color="success" (click)="track()" expand="full" class="ion-margin">위치추적하기
   </ion-button>
   <ion-button color="danger" (click)="stopTracking()" expand="full" class="ion-margin">추적 중지
   </ion-button>
+
+  <agm-map [usePanning]="true" [latitude]="lat" [longitude]="lng" [zoom]="12" [disableDefaultUI]="false">
+    <agm-marker [latitude]="lat" [longitude]="lng" [markerDraggable]=true></agm-marker>
+  </agm-map>
+
 </ion-content>

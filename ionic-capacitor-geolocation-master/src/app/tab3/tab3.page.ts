@@ -9,6 +9,7 @@ const { Geolocation } = Plugins;
 export class Tab3Page {
   public lat: any;
   public lng: any;
+  public alt: any;
   wait: any;
   constructor(public ngZone: NgZone) { }
   track() {
@@ -18,6 +19,7 @@ export class Tab3Page {
         
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
+        this.alt = position.coords.altitude;
       })
     })
   }
