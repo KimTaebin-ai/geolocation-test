@@ -56,6 +56,15 @@ const routes: Routes = [
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }
         ]
+      },     {
+        path: 'wifi',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+                import('../wifi/wifi.module').then(m => m.WifiPageModule)
+          }
+        ]
       },
       {
         path: '',

@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'naver-map',
     loadChildren: () => import('./naver-map/naver-map.module').then( m => m.NaverMapPageModule)
+  },
+  {
+    path: 'wifi',
+    loadChildren: () => import('./wifi/wifi.module').then( m => m.WifiPageModule)
   }
 
 ];
