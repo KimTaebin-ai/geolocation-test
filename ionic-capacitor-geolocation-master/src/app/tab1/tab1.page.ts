@@ -11,12 +11,15 @@ export class Tab1Page {
   coords: any;
   address: any;
   constructor(private nativeGeocoder: NativeGeocoder) { }
+
   async locate() {
     const coordinates = await Geolocation.getCurrentPosition();
     console.log('Current', coordinates);
     this.coords = coordinates.coords;
   }
+
   async reverseGeocode() {
+    console.log('test');
     if (!this.coords) {
       const coordinates = await Geolocation.getCurrentPosition();
       this.coords = coordinates.coords;
@@ -25,6 +28,7 @@ export class Tab1Page {
       useLocale: true,
       maxResults: 5
     };
+
     this.nativeGeocoder.reverseGeocode(this.coords.latitude, this.coords.longitude, options)
       .then((result: NativeGeocoderResult[]) => {
         console.log(result);

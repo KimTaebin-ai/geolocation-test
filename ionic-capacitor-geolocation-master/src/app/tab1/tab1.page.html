@@ -16,10 +16,13 @@
     <ion-card-content>
       <p>위도 및 경도에서 장치 위치를 가져오려면 클릭하십시오.</p>
       <ion-row *ngIf="coords && coords.latitude">
-        <ion-text class="coords">위도 : {{coords.latitude}}</ion-text>
+        <ion-text class="coords">위도 : {{coords?.latitude}}</ion-text>
       </ion-row>
       <ion-row *ngIf="coords && coords.longitude">
-        <ion-text class="coords">경도 : {{coords.longitude}}</ion-text>
+        <ion-text class="coords">경도 : {{coords?.longitude}}</ion-text>
+      </ion-row>
+      <ion-row *ngIf="coords && coords.longitude">
+        <ion-text class="coords">고도: {{ coords?.altitude }}</ion-text>
       </ion-row>
       <ion-button (click)="locate()" expand="full">내 위치 찾기</ion-button>
 
