@@ -1,9 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>wifi</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>
+      와이파이 연결 체크
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div>{{ connectionText ? connectionText : 'pc 에서 확인 불가' }}</div>
 </ion-content>

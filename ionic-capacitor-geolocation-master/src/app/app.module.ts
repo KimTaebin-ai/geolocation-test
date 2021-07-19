@@ -11,13 +11,15 @@ import {AppComponent} from './app.component';
 import {NativeGeocoder} from '@ionic-native/native-geocoder/ngx';
 import {AgmCoreModule} from '@agm/core';
 import {BackgroundGeolocation} from "@ionic-native/background-geolocation/ngx";
+import {Network} from '@ionic-native/network/ngx';
+
 
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
     imports: [BrowserModule,
         AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyDKRiXPIAuaSQPAHoJCukwmM5uTaESgkoA',
+            apiKey: 'AIzaSyBZDoebTcNnQ_-NsAyDVGVhFtXT64vd0oM',
             libraries: ['places']
         }),
         IonicModule.forRoot(),
@@ -27,6 +29,7 @@ import {BackgroundGeolocation} from "@ionic-native/background-geolocation/ngx";
         SplashScreen,
         NativeGeocoder,
         BackgroundGeolocation,
+        Network,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]
